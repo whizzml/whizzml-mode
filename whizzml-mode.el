@@ -29,6 +29,7 @@
 
 ;;; Code:
 
+(require 'subr-x)
 (require 'lisp-mode)
 
 (defvar whizzml-mode-syntax-table
