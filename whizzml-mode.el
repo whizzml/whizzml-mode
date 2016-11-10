@@ -126,7 +126,7 @@
         ("(\\(define\\)\\>[ \t]*\\(\\sw+\\)?"
          (1 font-lock-keyword-face)
          (2 font-lock-variable-name-face nil t))
-        ,(concat "(" (regexp-opt '("prog" "loop" "recur"
+        ,(concat "(" (regexp-opt '("prog" "loop" "recur" "reduce" "filter"
                                    "iterate" "break" "cond" "flatline"
                                    "for" "if" "lambda" "let"
                                    "and" "or" "map" "list"
