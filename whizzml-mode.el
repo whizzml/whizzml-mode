@@ -144,23 +144,23 @@
     "create" "wait" "fetch" "delete" "update" "wait*" "delete*"
     "create-and-wait" "update-and-wait"))
 
-(setq whizzml-font-lock-keywords
-      `(("(\\(define\\)\\>[ \t]*(\\(\\sw+\\)?"
-         (1 font-lock-keyword-face)
-         (2 font-lock-function-name-face nil t))
-        ("(\\(define\\)\\>[ \t]*\\(\\sw+\\)?"
-         (1 font-lock-keyword-face)
-         (2 font-lock-variable-name-face nil t))
-        ,(concat "(" (regexp-opt '("prog" "loop" "recur" "reduce" "filter"
-                                   "iterate" "break" "cond" "flatline"
-                                   "for" "if" "lambda" "let"
-                                   "and" "or" "map" "list"
-                                   "when" "handle" "raise" "try" "catch") t)
-                 "\\>")
-        (,(concat "\\<" (regexp-opt whizzml-builtins t) "\\>")
-         (1 font-lock-function-name-face))
-        (,(concat "\\<" (regexp-opt whizzml-std-procedures t) "\\>")
-         (1 font-lock-function-name-face))))
+(defvar whizzml-font-lock-keywords
+  `(("(\\(define\\)\\>[ \t]*(\\(\\sw+\\)?"
+     (1 font-lock-keyword-face)
+     (2 font-lock-function-name-face nil t))
+    ("(\\(define\\)\\>[ \t]*\\(\\sw+\\)?"
+     (1 font-lock-keyword-face)
+     (2 font-lock-variable-name-face nil t))
+    ,(concat "(" (regexp-opt '("prog" "loop" "recur" "reduce" "filter"
+                               "iterate" "break" "cond" "flatline"
+                               "for" "if" "lambda" "let"
+                               "and" "or" "map" "list"
+                               "when" "handle" "raise" "try" "catch") t)
+             "\\>")
+    (,(concat "\\<" (regexp-opt whizzml-builtins t) "\\>")
+     (1 font-lock-function-name-face))
+    (,(concat "\\<" (regexp-opt whizzml-std-procedures t) "\\>")
+     (1 font-lock-function-name-face))))
 
 (defun whizzml-mode-variables ()
   (set-syntax-table whizzml-mode-syntax-table)
