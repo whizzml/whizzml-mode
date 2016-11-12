@@ -84,6 +84,29 @@
 (defvar whizzml-mode-abbrev-table nil)
 (define-abbrev-table 'whizzml-mode-abbrev-table ())
 
+(defvar whizzml-builtins
+  '("!=" "*" "+" "-" "/" "<" "<=" "=" ">" ">="
+    "abort" "abs" "acos" "append" "asin" "assoc" "assoc-in" "atan"
+    "bigml--cdf" "bigml--pdf" "boolean?" "butlast"
+    "ceil" "concat" "cons" "contains-string?" "contains?" "cos" "cosh" "count"
+    "create" "create-rng" "created-resources"
+    "delete" "dissoc" "dissoc-in" "div" "drop"
+    "empty?" "even?" "exp" "fetch"
+    "flatline-listify" "flatline-splice" "flatline-str" "flatline-str-splice"
+    "floor" "get" "get-in" "head" "insert" "integer?" "join" "keys"
+    "last" "list" "list*" "list?"
+    "ln" "log" "log-error" "log-info" "log-warn" "log10" "log2"
+    "make-map" "map?" "matches" "matches?" "max" "mean" "merge" "min"
+    "negative?" "nil?" "not" "nth" "number?" "odd?" "parse-resource-id"
+    "positive?" "pow" "ppr-str" "pr-str" "pretty-whizzml" "procedure?" "rand"
+    "rand-int" "range" "re-quote" "real?" "regexp?" "rem" "repeat" "replace"
+    "replace-first" "resource-done?" "resource-id?" "resources" "reverse"
+    "round" "row-distance" "row-distance-squared" "set-rng-seed" "sin" "sinh"
+    "sort" "sort-by-key" "sqrt" "stdev" "str" "string?" "subs"
+    "tail" "take" "tan" "tanh" "to-degrees" "to-radians"
+    "update" "values" "variance"
+    "version" "version-major" "version-micro" "version-minor" "wait" "zero?"))
+
 (defvar whizzml-std-procedures
   '("create-and-wait-anomaly" "create-and-wait-anomalyscore"
     "create-and-wait-association" "create-and-wait-associationset"
@@ -132,6 +155,8 @@
                                    "and" "or" "map" "list"
                                    "when" "handle" "raise" "try" "catch") t)
                  "\\>")
+        (,(concat "\\<" (regexp-opt whizzml-builtins t) "\\>")
+         (1 font-lock-function-name-face))
         (,(concat "\\<" (regexp-opt whizzml-std-procedures t) "\\>")
          (1 font-lock-function-name-face))))
 
