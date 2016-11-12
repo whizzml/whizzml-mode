@@ -25,7 +25,7 @@
 
 ;;; Comentary:
 
-;;
+;; This package provides a major mode for editing WhizzML source code.
 
 ;;; Code:
 
