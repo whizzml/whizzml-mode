@@ -1,9 +1,10 @@
-;; whizzml-mode.el -- Programming mode for editing WhizzML files
+;;; whizzml-mode.el --- Programming mode for editing WhizzML files
 
 ;; Copyright (c) 2016 BigML, Inc
 
 ;; Author: Jose Antonio Ortega Ruiz <jao@bigml.com>
-;; Start date: Wed May 18, 2016 04:18
+;; Package-Requires: ((emacs "24.4"))
+;; Version: 0.1
 ;; Keywords: languages, lisp
 
 
@@ -28,6 +29,7 @@
 ;; This package provides a major mode for editing WhizzML source code.
 
 ;;; Code:
+
 
 (require 'subr-x)
 (require 'lisp-mode)
