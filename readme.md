@@ -1,3 +1,5 @@
+[![MELPA](https://melpa.org/packages/whizzml-mode-badge.svg)](https://melpa.org/#/whizzml-mode)
+
 # WhizzML mode for Emacs
 
 This package provides a major mode for editing WhizzML source code.
@@ -13,5 +15,5 @@ See https://bigml.com/whizzml for details.
 
 ### Using MELPA
 
-The package should be shortly available in MELPA and, when we tag
-stable versions, in MELPA Stable.
+Add MELPA to your package sources and then `M-x package-install RET
+whizzml-mode` should do the trick.
