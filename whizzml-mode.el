@@ -164,6 +164,8 @@
         (,(concat "\\<" (regexp-opt whizzml-std-procedures t) "\\>")
          (1 font-lock-function-name-face))))
 
+(defun whizzml-syntax-propertize (beg end))
+
 (defun whizzml-mode-variables ()
   (set-syntax-table whizzml-mode-syntax-table)
   (setq local-abbrev-table whizzml-mode-abbrev-table)
@@ -212,6 +214,24 @@
     smap)
   "Keymap for WhizzML mode.
 All commands in `lisp-mode-shared-map' are inherited by this map.")
+
+
+;; paredit setup
+
+(eval-after-load "paredit"
+  '(when (>= paredit-version 21)
+     (define-key whizzml-mode-map "{"
+       (lambda ()
+         (interactive)
+         (if paredit-mode
+             (call-interactively 'paredit-open-curly)
+           (call-interactively 'self-insert-command))))
+     (define-key whizzml-mode-map "}"
+       (lambda ()
+         (interactive)
+         (if paredit-mode
+             (call-interactively 'paredit-close-curly)
+           (call-interactively 'self-insert-command))))))
 
 
 ;;;###autoload
