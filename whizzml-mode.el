@@ -236,13 +236,6 @@ See `run-hooks'."
   :type 'hook
   :group 'whizzml)
 
-(defcustom whizzml-program-name "whizzml"
-  "Program invoked by the `run-whizzml' command."
-  :type 'string
-  :group 'whizzml)
-
-(defun whizzml-syntax-propertize (beg end))
-
 
 (defvar calculate-lisp-indent-last-sexp)
 
