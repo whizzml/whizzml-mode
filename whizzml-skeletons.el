@@ -53,7 +53,7 @@
   (let ((new (read-string (format "New %s (RET for no more): " thing))))
     (if (string-blank-p new)
         (whizzml-skeletons-print-list (reverse acc))
-      (whizzml-skeletons-read-components thing (cons new acc)))))
+      (whizzml-skeletons-read-list thing (cons new acc)))))
 
 (define-skeleton whizzml-parameter-skeleon
   "Skeleton for an input/output parameter"
@@ -109,6 +109,7 @@
 (defun whizzml-skeletons-insert-skeleton ()
   "Choose one of the possible metadata types (library, script or
   package), and insert an skeleton for it."
+  (interactive)
   (let ((k (completing-read "WhizzML resource: "
                             '("library" "script" "package")
                             nil
