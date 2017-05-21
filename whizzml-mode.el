@@ -1,10 +1,10 @@
 ;;; whizzml-mode.el --- Programming mode for editing WhizzML files
 
-;; Copyright (c) 2016 BigML, Inc
+;; Copyright (c) 2016, 2017 BigML, Inc
 
 ;; Author: Jose Antonio Ortega Ruiz <jao@bigml.com>
 ;; Package-Requires: ((emacs "24.4"))
-;; Version: 0.1
+;; Version: 0.2
 ;; Keywords: languages, lisp
 
 
@@ -100,16 +100,18 @@
     "floor" "get" "get-in" "head" "insert" "integer?" "join" "keys"
     "last" "list" "list*" "list?"
     "ln" "log" "log-error" "log-info" "log-warn" "log10" "log2"
-    "make-map" "map?" "matches" "matches?" "max" "mean" "merge" "min"
+    "make-map" "map?" "matches" "matches?" "max" "md5" "mean" "merge" "min"
     "negative?" "nil?" "not" "nth" "number?" "odd?" "parse-resource-id"
     "positive?" "pow" "ppr-str" "pr-str" "pretty-whizzml" "procedure?" "rand"
     "rand-int" "range" "re-quote" "real?" "regexp?" "rem" "repeat" "replace"
     "replace-first" "resource-done?" "resource-id?" "resources" "reverse"
-    "round" "row-distance" "row-distance-squared" "set-rng-seed" "sin" "sinh"
+    "round" "row-distance" "row-distance-squared" "set-rng-seed"
+    "sha1" "sha256" "sin" "sinh"
     "sort" "sort-by-key" "sqrt" "stdev" "str" "string?" "subs"
     "tail" "take" "tan" "tanh" "to-degrees" "to-radians"
     "update" "values" "variance"
-    "version" "version-major" "version-micro" "version-minor" "wait" "zero?"))
+    "version" "version-major" "version-micro" "version-minor"
+    "with-time-log" "wait" "zero?"))
 
 (defvar whizzml-std-procedures
   '("create-and-wait-anomaly" "create-and-wait-anomalyscore"
