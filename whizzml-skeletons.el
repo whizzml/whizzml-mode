@@ -35,6 +35,20 @@
 ;; commands (with M-x):
 ;;
 ;;   - whizzml-library-skeleton
+;;   - whizzml-script-skeleton
+;;   - whizzml-package-skeleton
+;;
+;;  or you can also simply call `whizzml-skeletons-insert-skeleton',
+;;  which will ask for the template to insert.
+;;
+;;  If you want emacs to automatically offer you the choice of
+;;  skeleton insertion when creating a file named `metadata.json',
+;;  just invoke `whizzml-skeletons-activate' in your .emacs:
+;;
+;;     require 'whizzml-skeletons) ;; needed only if you don't use ELPA
+;;     (whizzml-skeletons-activate)
+;;
+
 
 ;;; Code:
 
@@ -72,6 +86,7 @@
       (whizzml-parameter-skeleon name)
       (whizzml-skeletons-read-params t))))
 
+;;;###autoload
 (define-skeleton whizzml-package-skeleton
   "Skeleton for a whizzml package definition"
   "Package name: "
@@ -82,6 +97,7 @@
   > "\"components\":[" \n > (whizzml-skeletons-read-list "component") "]" \n
   "}" >)
 
+;;;###autoload
 (define-skeleton whizzml-library-skeleton
   "Skeleton for a whizzmml library definition"
   "Libary name: "
@@ -93,6 +109,7 @@
   > "\"source_code\": \"library.whizzml\"" \n
   "}" >)
 
+;;;###autoload
 (define-skeleton whizzml-script-skeleton
   "Skeleton for a whizzmml script definition"
   "Script name: "
@@ -106,6 +123,7 @@
   > "\"outputs\":[" \n > (whizzml-skeletons-read-params) "]" \n
   "}" >)
 
+;;;###autoload
 (defun whizzml-skeletons-insert-skeleton ()
   "Choose one of the possible metadata types (library, script or
   package), and insert an skeleton for it."
@@ -121,11 +139,13 @@
           ((string= k "script") (whizzml-script-skeleton))
           (t (whizzml-package-skeleton)))))
 
-(defun whizzml-activate-skeletons ()
+;;;###autoload
+(defun whizzml-skeletons-activate ()
   "Calling this function will install the whizzml skeletons
   for candidates to auto-insertion in files named metadata.json"
   (interactive)
   (define-auto-insert '("metadata\.json$" . "WhizzML metadata")
     'whizzml-skeletons-insert-skeleton))
 
+
 (provide 'whizzml-skeletons)
