@@ -155,12 +155,13 @@
     ("(\\(define\\)\\>[ \t]*\\(\\sw+\\)?"
      (1 font-lock-keyword-face)
      (2 font-lock-variable-name-face nil t))
-    ,(concat "(" (regexp-opt '("prog" "loop" "recur" "reduce" "filter"
-                               "iterate" "break" "cond" "flatline"
-                               "for" "if" "lambda" "let"
-                               "and" "or" "map" "list"
-                               "when" "handle" "raise" "try" "catch") t)
-             "\\>")
+    (,(concat "(" (regexp-opt '("prog" "loop" "recur" "reduce" "filter"
+                                "iterate" "break" "cond" "flatline"
+                                "for" "if" "lambda" "let"
+                                "and" "or" "map" "list"
+                                "when" "handle" "raise" "try" "catch") t)
+              "\\>")
+     (1 font-lock-keyword-face))
     (,(concat "\\<" (regexp-opt whizzml-builtins t) "\\>")
      (1 font-lock-function-name-face))
     (,(concat "\\<" (regexp-opt whizzml-std-procedures t) "\\>")
