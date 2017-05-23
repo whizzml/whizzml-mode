@@ -300,8 +300,8 @@ indentation."
              ;; line as calculate-lisp-indent-last-sexp.  Note that first
              ;; thing on that line has to be complete sexp since we are
              ;; inside the innermost containing sexp.
-             (backward-prefix-chars)
-             (current-column)))
+             (backward-prefix-chars))
+           (current-column))
           ((whizzml-mode--letty-args state) (current-column))
           (t
            (let* ((funname (buffer-substring (point) (progn (forward-sexp 1)
