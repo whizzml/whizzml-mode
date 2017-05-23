@@ -327,6 +327,7 @@ indentation."
 (put 'let 'whizzml-indent-function 1)
 (put 'loop 'whizzml-indent-function 1)
 (put 'when 'whizzml-indent-function 1)
+(put 'if 'whizzml-indent-function 1)
 
 
 ;;;###autoload
