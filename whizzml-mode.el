@@ -88,6 +88,11 @@
 (defvar whizzml-mode-abbrev-table nil)
 (define-abbrev-table 'whizzml-mode-abbrev-table ())
 
+(defvar whizzml-syntax-forms
+  '("prog" "loop" "recur" "reduce" "filter" "iterate" "break" "cond" "flatline"
+    "for" "if" "lambda" "let" "and" "or" "map" "list"
+    "when" "handle" "raise" "try" "catch"))
+
 (defvar whizzml-builtins
   '("!=" "*" "+" "-" "/" "<" "<=" "=" ">" ">="
     "abort" "abs" "acos" "append" "asin" "assoc" "assoc-in" "atan"
@@ -155,17 +160,34 @@
     ("(\\(define\\)\\>[ \t]*\\(\\sw+\\)?"
      (1 font-lock-keyword-face)
      (2 font-lock-variable-name-face nil t))
-    (,(concat "(" (regexp-opt '("prog" "loop" "recur" "reduce" "filter"
-                                "iterate" "break" "cond" "flatline"
-                                "for" "if" "lambda" "let"
-                                "and" "or" "map" "list"
-                                "when" "handle" "raise" "try" "catch") t)
-              "\\>")
+    (,(concat "(" (regexp-opt whizzml-syntax-forms t) "\\>")
      (1 font-lock-keyword-face))
     (,(concat "\\<" (regexp-opt whizzml-builtins t) "\\>")
      (1 font-lock-function-name-face))
     (,(concat "\\<" (regexp-opt whizzml-std-procedures t) "\\>")
      (1 font-lock-function-name-face))))
+
+(defvar whizzml-mode--static-completion-list
+  (sort (append '("define")
+                whizzml-syntax-forms
+                whizzml-builtins
+                whizzml-std-procedures)
+        'string-lessp))
+
+(defun whizzml-mode-complete-symbol-at-point ()
+  (let* ((beg (save-excursion (skip-syntax-backward "^-()>") (point)))
+         (end (+ beg (length (thing-at-point 'symbol)))))
+    (when (> end beg)
+      (let ((prefix (buffer-substring-no-properties beg end)))
+        (message "p: %s" prefix)
+        (message "c: %s" (all-completions prefix
+                                          whizzml-mode--static-completion-list))
+        (list beg
+              (min (point-max) end)
+              (completion-table-dynamic
+               `(lambda (_)
+                  (all-completions ,prefix
+                                   whizzml-mode--static-completion-list))))))))
 
 (defun whizzml-syntax-propertize (beg end))
 
@@ -189,6 +211,8 @@
   (setq-local lisp-indent-function 'whizzml-indent-function)
   (setq mode-line-process '("" whizzml-mode-line-process))
   (setq-local syntax-propertize-function #'whizzml-syntax-propertize)
+  (setq-local completion-at-point-functions
+              '(whizzml-mode-complete-symbol-at-point))
   (setq font-lock-defaults
 	'(whizzml-font-lock-keywords
 	  nil nil

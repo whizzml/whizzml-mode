@@ -17,3 +17,9 @@ See https://bigml.com/whizzml for details.
 
 Add MELPA to your package sources and then `M-x package-install RET
 whizzml-mode` should do the trick.
+
+## Features
+
+- Syntax highlighting (font lock)
+- Completion (via `M-x` and also company-mode) for all WhizzML
+  built-ins and standard functions
