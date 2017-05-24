@@ -1,4 +1,4 @@
-[![MELPA](https://melpa.org/packages/whizzml-mode-badge.svg)](https://melpa.org/#/whizzml-mode)
+[![MELPA](https://melpa.org/packages/whizzml-mode-badge.svg)](https://melpa.org/#/whizzml-mode) [![MELPA Stable](https://stable.melpa.org/packages/whizzml-mode-badge.svg)](https://stable.melpa.org/#/whizzml-mode)
 
 # WhizzML mode for Emacs
 
