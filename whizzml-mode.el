@@ -4,7 +4,7 @@
 
 ;; Author: Jose Antonio Ortega Ruiz <jao@bigml.com>
 ;; Package-Requires: ((emacs "24.4"))
-;; Version: 0.2
+;; Version: 0.2.1
 ;; Keywords: languages, lisp
 
 
@@ -179,9 +179,6 @@
          (end (+ beg (length (thing-at-point 'symbol)))))
     (when (> end beg)
       (let ((prefix (buffer-substring-no-properties beg end)))
-        (message "p: %s" prefix)
-        (message "c: %s" (all-completions prefix
-                                          whizzml-mode--static-completion-list))
         (list beg
               (min (point-max) end)
               (completion-table-dynamic
@@ -295,7 +292,6 @@ See `run-hooks'."
       (let ((prefix (buffer-substring (point) (1- (elt state 1)))))
         (when (string-match "\\(let\\|loop\\|iterate\\)\\'"
                             (string-trim prefix))
-          (message "eh: %s" prefix)
           (point))))))
 
 (defun whizzml-indent-function (indent-point state)
