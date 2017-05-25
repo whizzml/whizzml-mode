@@ -157,6 +157,7 @@
   `(("(\\(define\\)\\>[ \t]*(\\(\\sw+\\)?"
      (1 font-lock-keyword-face)
      (2 font-lock-function-name-face nil t))
+    ("\\<\\(true\\|false\\)\\>" (1 font-lock-constant-face))
     ("(\\(define\\)\\>[ \t]*\\(\\sw+\\)?"
      (1 font-lock-keyword-face)
      (2 font-lock-variable-name-face nil t))
@@ -168,7 +169,7 @@
      (1 font-lock-function-name-face))))
 
 (defvar whizzml-mode--static-completion-list
-  (sort (append '("define")
+  (sort (append '("define" "true" "false")
                 whizzml-syntax-forms
                 whizzml-builtins
                 whizzml-std-procedures)
