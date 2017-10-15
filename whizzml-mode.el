@@ -4,7 +4,7 @@
 
 ;; Author: Jose Antonio Ortega Ruiz <jao@bigml.com>
 ;; Package-Requires: ((emacs "24.4"))
-;; Version: 0.2.1
+;; Version: 0.2.2
 ;; Keywords: languages, lisp
 
 
