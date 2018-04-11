@@ -1,6 +1,6 @@
 ;;; whizzml-mode.el --- Programming mode for editing WhizzML files
 
-;; Copyright (c) 2016, 2017 BigML, Inc
+;; Copyright (c) 2016, 2017, 2018 BigML, Inc
 
 ;; Author: Jose Antonio Ortega Ruiz <jao@bigml.com>
 ;; Package-Requires: ((emacs "24.4"))
@@ -132,7 +132,9 @@
     "create-and-wait-project" "create-and-wait-sample"
     "create-and-wait-script" "create-and-wait-source"
     "create-and-wait-statisticaltest" "create-and-wait-topicdistribution"
-    "create-and-wait-topicmodel" "create-anomaly" "create-anomalyscore"
+    "create-and-wait-topicmodel" "create-and-wait-composite"
+    "create-and-wait-swarm" "create-and-wait-optimization"
+    "create-anomaly" "create-anomalyscore"
     "create-association" "create-associationset" "create-batchanomalyscore"
     "create-batchcentroid" "create-batchprediction"
     "create-batchtopicdistribution" "create-centroid" "create-cluster"
@@ -141,17 +143,24 @@
     "create-library" "create-logisticregression" "create-model"
     "create-prediction" "create-project" "create-sample" "create-script"
     "create-source" "create-statisticaltest" "create-topicdistribution"
+    "create-composite" "create-swarm" "create-optimization"
     "create-topicmodel" "list-anomalies" "list-anomalyscores"
+    "create-dataset-split" "create-random-datatset-split"
     "list-associations" "list-associationsets" "list-batchanomalyscores"
     "list-batchcentroids" "list-batchpredictions"
     "list-batchtopicdistributions" "list-centroids" "list-clusters"
+    "list-composite"
     "list-configurations" "list-correlations" "list-datasets" "list-ensembles"
     "list-evaluations" "list-executions" "list-libraries"
-    "list-logisticregressions" "list-models" "list-predictions"
+    "list-logisticregressions" "list-models" "list-optimizations"
+    "list-predictions"
     "list-projects" "list-samples" "list-scripts" "list-sources"
-    "list-statisticaltests" "list-topicdistributions" "list-topicmodels"
+    "list-statisticaltests" "list-swarms"
+    "list-topicdistributions" "list-topicmodels"
     "create" "wait" "fetch" "delete" "update" "wait*" "delete*"
-    "create-and-wait" "update-and-wait"))
+    "create-and-wait" "update-and-wait"
+    "field?" "field-items" "field-optypes" "field-terms" "find-field"
+    "categorical-field?" "numeric-field?" "items-field?" "text-field?"))
 
 (defvar whizzml-font-lock-keywords
   `(("(\\(define\\)\\>[ \t]*(\\(\\sw+\\)?"
