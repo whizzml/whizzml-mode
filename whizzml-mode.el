@@ -4,7 +4,7 @@
 
 ;; Author: Jose Antonio Ortega Ruiz <jao@bigml.com>
 ;; Package-Requires: ((emacs "24.4"))
-;; Version: 0.2.2
+;; Version: 0.3.0
 ;; Keywords: languages, lisp
 
 
@@ -100,7 +100,7 @@
     "ceil" "concat" "cons" "contains-string?" "contains?" "cos" "cosh" "count"
     "create" "create-rng" "created-resources"
     "delete" "dissoc" "dissoc-in" "div" "drop"
-    "empty?" "even?" "exp" "fetch"
+    "empty?" "even?" "every?" "exp" "fetch"
     "flatline-listify" "flatline-splice" "flatline-str" "flatline-str-splice"
     "floor" "get" "get-in" "head" "insert" "integer?" "join" "keys"
     "last" "list" "list*" "list?"
@@ -111,6 +111,7 @@
     "rand-int" "range" "re-quote" "real?" "regexp?" "rem" "repeat" "replace"
     "replace-first" "resource-done?" "resource-id" "resource-ids" "resource-id?"
     "resources" "reverse" "round" "row-distance" "row-distance-squared"
+    "select-keys"
     "set-rng-seed" "sha1" "sha256" "sin" "sinh"
     "sort" "sort-by-key" "sqrt" "stdev" "str" "string?" "subs"
     "tail" "take" "tan" "tanh" "to-degrees" "to-radians"
@@ -133,7 +134,7 @@
     "create-and-wait-script" "create-and-wait-source"
     "create-and-wait-statisticaltest" "create-and-wait-topicdistribution"
     "create-and-wait-topicmodel" "create-and-wait-composite"
-    "create-and-wait-swarm" "create-and-wait-optimization"
+    "create-and-wait-fusion" "create-and-wait-optiml"
     "create-anomaly" "create-anomalyscore"
     "create-association" "create-associationset" "create-batchanomalyscore"
     "create-batchcentroid" "create-batchprediction"
@@ -143,7 +144,7 @@
     "create-library" "create-logisticregression" "create-model"
     "create-prediction" "create-project" "create-sample" "create-script"
     "create-source" "create-statisticaltest" "create-topicdistribution"
-    "create-composite" "create-swarm" "create-optimization"
+    "create-composite" "create-fusion" "create-optiml"
     "create-topicmodel" "list-anomalies" "list-anomalyscores"
     "create-dataset-split" "create-random-datatset-split"
     "list-associations" "list-associationsets" "list-batchanomalyscores"
@@ -152,15 +153,16 @@
     "list-composite"
     "list-configurations" "list-correlations" "list-datasets" "list-ensembles"
     "list-evaluations" "list-executions" "list-libraries"
-    "list-logisticregressions" "list-models" "list-optimizations"
+    "list-logisticregressions" "list-models" "list-optimls"
     "list-predictions"
     "list-projects" "list-samples" "list-scripts" "list-sources"
-    "list-statisticaltests" "list-swarms"
+    "list-statisticaltests" "list-fusions"
     "list-topicdistributions" "list-topicmodels"
     "create" "wait" "fetch" "delete" "update" "wait*" "delete*"
     "create-and-wait" "update-and-wait"
     "field?" "field-items" "field-optypes" "field-terms" "find-field"
-    "categorical-field?" "numeric-field?" "items-field?" "text-field?"))
+    "categorical-field?" "numeric-field?" "items-field?" "text-field?"
+    "identity"))
 
 (defvar whizzml-font-lock-keywords
   `(("(\\(define\\)\\>[ \t]*(\\(\\sw+\\)?"
