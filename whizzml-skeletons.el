@@ -1,6 +1,6 @@
 ;;; whizzml-skeletons.el --- Skeletons for auto-insertion of metadata JSON
 
-;; Copyright (c) 2017 BigML, Inc
+;; Copyright (c) 2017, 2018 BigML, Inc
 
 ;; Author: Jose Antonio Ortega Ruiz <jao@bigml.com>
 ;; Package-Requires: ((emacs "24.4"))
@@ -57,7 +57,7 @@
 (require 'autoinsert)
 
 (defun whizzml-skeletons-print-list (lst)
-  (insert "\"" (car lst) "\"")
+  (when (car lst) (insert "\"" (car lst) "\""))
   (dolist (l (cdr lst))
   (indent-according-to-mode)
   (insert ",\n\"" l "\""))
