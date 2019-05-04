@@ -1,10 +1,10 @@
 ;;; whizzml-mode.el --- Programming mode for editing WhizzML files
 
-;; Copyright (c) 2016, 2017, 2018 BigML, Inc
+;; Copyright (c) 2016, 2017, 2018, 2019 BigML, Inc
 
 ;; Author: Jose Antonio Ortega Ruiz <jao@bigml.com>
 ;; Package-Requires: ((emacs "24.4"))
-;; Version: 0.3.0
+;; Version: 0.31.3
 ;; Keywords: languages, lisp
 
 
@@ -81,7 +81,7 @@
     ;; Special characters
     ;; (modify-syntax-entry ?, "'   " st)
     ;; (modify-syntax-entry ?@ "'   " st)
-    ;; (modify-syntax-entry ?# "' 14" st)
+    (modify-syntax-entry ?# "' 14" st)
     ;; (modify-syntax-entry ?\\ "\\   " st)
     st))
 
@@ -95,27 +95,29 @@
 
 (defvar whizzml-builtins
   '("!=" "*" "+" "-" "/" "<" "<=" "=" ">" ">="
-    "abort" "abs" "acos" "append" "asin" "assoc" "assoc-in" "atan"
-    "bigml--cdf" "bigml--pdf" "boolean?" "butlast"
+    "abort" "abs" "acos" "add" "append" "asin" "assoc" "assoc-in" "atan"
+    "bigml--cdf" "bigml--pdf" "boolean?" "butlast" "capitalize"
     "ceil" "concat" "cons" "contains-string?" "contains?" "cos" "cosh" "count"
     "create" "create-rng" "created-resources"
-    "delete" "dissoc" "dissoc-in" "div" "drop"
+    "delete" "difference" "dissoc" "dissoc-in" "div" "drop"
     "empty?" "even?" "every?" "exp" "fetch"
     "flatline-listify" "flatline-splice" "flatline-str" "flatline-str-splice"
-    "floor" "get" "get-in" "head" "insert" "integer?" "join" "keys"
-    "last" "list" "list*" "list?"
-    "ln" "log" "log-error" "log-info" "log-warn" "log10" "log2"
+    "floor" "get" "get-in" "head" "insert" "integer?" "intersection"
+    "join" "keys" "last" "list" "list*" "list?"
+    "ln" "log" "log-error" "log-info" "log-warn" "log10" "log2" "lower-case"
     "make-map" "map?" "matches" "matches?" "max" "md5" "mean" "merge" "min"
     "negative?" "nil?" "not" "nth" "number?" "odd?" "parse-resource-id"
     "positive?" "pow" "ppr-str" "pr-str" "pretty-whizzml" "procedure?" "rand"
-    "rand-int" "range" "re-quote" "real?" "regexp?" "rem" "repeat" "replace"
+    "rand-int" "range" "re-quote" "real?" "regexp?" "rem" "remove"
+    "remove-duplicates" "repeat" "replace"
     "replace-first" "resource-done?" "resource-id" "resource-ids" "resource-id?"
     "resources" "reverse" "round" "row-distance" "row-distance-squared"
-    "select-keys"
+    "select-keys" "set?" "set*"
     "set-rng-seed" "sha1" "sha256" "sin" "sinh"
     "sort" "sort-by-key" "sqrt" "stdev" "str" "string?" "subs"
-    "tail" "take" "tan" "tanh" "to-degrees" "to-radians"
-    "update" "values" "variance"
+    "subset?" "superset?"
+    "tail" "take" "tan" "tanh" "to-degrees" "to-radians" "union"
+    "update" "upper-case" "values" "variance"
     "version" "version-major" "version-micro" "version-minor"
     "with-time-log" "wait" "zero?"))
 
@@ -128,7 +130,8 @@
     "create-and-wait-configuration" "create-and-wait-correlation"
     "create-and-wait-dataset" "create-and-wait-ensemble"
     "create-and-wait-evaluation" "create-and-wait-execution"
-    "create-and-wait-library" "create-and-wait-logisticregression"
+    "create-and-wait-library" "create-and-wait-linearregression"
+    "create-and-wait-logisticregression"
     "create-and-wait-model" "create-and-wait-prediction"
     "create-and-wait-project" "create-and-wait-sample"
     "create-and-wait-script" "create-and-wait-source"
@@ -141,7 +144,8 @@
     "create-batchtopicdistribution" "create-centroid" "create-cluster"
     "create-configuration" "create-correlation" "create-dataset"
     "create-ensemble" "create-evaluation" "create-execution"
-    "create-library" "create-logisticregression" "create-model"
+    "create-library" "create-linearregression"
+    "create-logisticregression" "create-model"
     "create-prediction" "create-project" "create-sample" "create-script"
     "create-source" "create-statisticaltest" "create-topicdistribution"
     "create-composite" "create-fusion" "create-optiml"
@@ -153,6 +157,7 @@
     "list-composite"
     "list-configurations" "list-correlations" "list-datasets" "list-ensembles"
     "list-evaluations" "list-executions" "list-libraries"
+    "list-linearregressions"
     "list-logisticregressions" "list-models" "list-optimls"
     "list-predictions"
     "list-projects" "list-samples" "list-scripts" "list-sources"
@@ -162,6 +167,7 @@
     "create-and-wait" "update-and-wait"
     "field?" "field-items" "field-optypes" "field-terms" "find-field"
     "categorical-field?" "numeric-field?" "items-field?" "text-field?"
+    "field-distribution"
     "identity"))
 
 (defvar whizzml-font-lock-keywords
