@@ -91,7 +91,7 @@
 (defvar whizzml-syntax-forms
   '("prog" "loop" "recur" "reduce" "filter" "iterate" "break" "cond" "flatline"
     "for" "if" "lambda" "let" "and" "or" "map" "list"
-    "when" "handle" "raise" "some" "try" "catch"))
+    "when" "handle" "raise" "try" "catch"))
 
 (defvar whizzml-builtins
   '("!=" "*" "+" "-" "/" "<" "<=" "=" ">" ">="
@@ -111,15 +111,16 @@
     "log-level" "log-progress" "logged-progress"
     "log10" "log2" "lower-case"
     "md5" "make-map" "map?" "matches" "matches?" "max" "max-key"
-    "mean" "merge" "min" "min-key"
+    "mean" "member?" "merge" "min" "min-key"
     "negative?" "nil?" "not" "nth" "number?" "odd?" "parse-resource-id"
     "positive?" "pow" "ppr-str" "pr-str" "pretty-whizzml" "procedure?" "rand"
     "rand-int" "rand-range" "range" "re-quote" "real?" "regexp?" "rem" "remove"
-    "remove-duplicates" "repeat" "replace"
-    "replace-first" "resource-done?" "resource-id" "resource-ids" "resource-id?"
+    "remove-duplicates" "repeat"
+    "replace" "replace-first" "replace-first-string" "replace-string"
+    "resource-done?" "resource-id" "resource-ids" "resource-id?"
     "resources" "reverse" "round" "row-distance" "row-distance-squared"
-    "select-keys" "set?" "set*" "set-log-level"
-    "set-rng-seed" "sha1" "sha256" "sin" "sinh"
+    "select-keys" "set" "set?" "set*" "set-log-level"
+    "set-rng-seed" "sha1" "sha256" "sin" "sinh" "some"
     "sort" "sort-by-key" "sqrt" "stdev" "str" "string?" "subs"
     "subset?" "superset?"
     "tail" "take" "tan" "tanh" "to-degrees" "to-radians" "union"
@@ -202,6 +203,7 @@
     "create-script"
     "create-source"
     "create-statisticaltest"
+    "create-timeseries"
     "create-topicdistribution"
     "create-topicmodel"
     "dataset-choose-objective-id"
