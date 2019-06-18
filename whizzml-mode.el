@@ -4,7 +4,7 @@
 
 ;; Author: Jose Antonio Ortega Ruiz <jao@bigml.com>
 ;; Package-Requires: ((emacs "24.4"))
-;; Version: 0.31.4
+;; Version: 0.33.0
 ;; Keywords: languages, lisp
 
 
@@ -114,14 +114,16 @@
     "mean" "member?" "merge" "min" "min-key"
     "negative?" "nil?" "not" "nth" "number?" "odd?" "parse-resource-id"
     "positive?" "pow" "ppr-str" "pr-str" "pretty-whizzml" "procedure?" "rand"
-    "rand-int" "rand-range" "range" "re-quote" "real?" "regexp?" "rem" "remove"
-    "remove-duplicates" "repeat"
+    "rand-int" "rand-range" "range" "read-number"
+    "re-quote" "real?" "regexp?" "rem" "remove" "remove-duplicates" "repeat"
     "replace" "replace-first" "replace-first-string" "replace-string"
-    "resource-done?" "resource-id" "resource-ids" "resource-id?"
+    "resource-done?" "resource-name" "resource-property"
+    "resource-id" "resource-ids" "resource-id?"
     "resources" "reverse" "round" "row-distance" "row-distance-squared"
     "select-keys" "set" "set?" "set*" "set-log-level"
     "set-rng-seed" "sha1" "sha256" "sin" "sinh" "some"
-    "sort" "sort-by-key" "sqrt" "stdev" "str" "string?" "subs"
+    "sort" "sort-by-key" "split" "split-regexp"
+    "sqrt" "stdev" "str" "string?" "subs"
     "subset?" "superset?"
     "tail" "take" "tan" "tanh" "to-degrees" "to-radians" "union"
     "update" "upper-case" "values" "variance"
@@ -257,6 +259,7 @@
     "list-statisticaltests"
     "list-timeseries"
     "list-topicdistributions" "list-topicmodels"
+    "merge-datasets"
     "create" "wait" "fetch" "delete" "update" "wait*" "delete*"
     "wait-forever" "wait-forever*"
     "create-and-wait" "update-and-wait"
