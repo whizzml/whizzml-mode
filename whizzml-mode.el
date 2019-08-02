@@ -4,7 +4,7 @@
 
 ;; Author: Jose Antonio Ortega Ruiz <jao@bigml.com>
 ;; Package-Requires: ((emacs "24.4"))
-;; Version: 0.33.0
+;; Version: 0.34.0
 ;; Keywords: languages, lisp
 
 
@@ -112,7 +112,8 @@
     "log10" "log2" "lower-case"
     "md5" "make-map" "map?" "matches" "matches?" "max" "max-key"
     "mean" "member?" "merge" "min" "min-key"
-    "negative?" "nil?" "not" "nth" "number?" "odd?" "parse-resource-id"
+    "negative?" "nil?" "not" "nth" "number?" "odd?"
+    "partial" "parse-resource-id"
     "positive?" "pow" "ppr-str" "pr-str" "pretty-whizzml" "procedure?" "rand"
     "rand-int" "rand-range" "range" "read-number"
     "re-quote" "real?" "regexp?" "rem" "remove" "remove-duplicates" "repeat"
