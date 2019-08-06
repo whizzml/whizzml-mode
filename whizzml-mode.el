@@ -4,7 +4,7 @@
 
 ;; Author: Jose Antonio Ortega Ruiz <jao@bigml.com>
 ;; Package-Requires: ((emacs "24.4"))
-;; Version: 0.34.0
+;; Version: 0.34.1
 ;; Keywords: languages, lisp
 
 
@@ -104,7 +104,7 @@
     "delete" "difference" "dissoc" "dissoc-in" "div" "drop"
     "empty?" "even?" "every?" "exp" "fetch"
     "flatline-listify" "flatline-splice" "flatline-str" "flatline-str-splice"
-    "floor" "get" "get-in" "head" "identity"
+    "flatten" "floor" "get" "get-in" "head" "identity"
     "insert" "integer?" "intersection"
     "join" "keys" "levenshtein" "last" "list" "list*" "list?"
     "ln" "log" "log-error" "log-info" "log-warn" "log-debug"
@@ -122,7 +122,7 @@
     "resource-id" "resource-ids" "resource-id?"
     "resources" "reverse" "round" "row-distance" "row-distance-squared"
     "select-keys" "set" "set?" "set*" "set-log-level"
-    "set-rng-seed" "sha1" "sha256" "sin" "sinh" "some"
+    "set-rng-seed" "sha1" "sha256" "sin" "sinh" "sleep" "some"
     "sort" "sort-by-key" "split" "split-regexp"
     "sqrt" "stdev" "str" "string?" "subs"
     "subset?" "superset?"
