@@ -118,6 +118,7 @@
     "rand-int" "rand-range" "range" "read-number"
     "re-quote" "real?" "regexp?" "rem" "remove" "remove-duplicates" "repeat"
     "replace" "replace-first" "replace-first-string" "replace-string"
+    "resource-fields" "resource-type" "resource-types"
     "resource-done?" "resource-name" "resource-property"
     "resource-id" "resource-ids" "resource-id?"
     "resources" "reverse" "round" "row-distance" "row-distance-squared"
@@ -264,8 +265,8 @@
     "create" "wait" "fetch" "delete" "update" "wait*" "delete*"
     "wait-forever" "wait-forever*"
     "create-and-wait" "update-and-wait"
-    "repeatedly" "resource-fields"
-    "resource-type" "resource-workflow" "scriptify"))
+    "repeatedly"
+    "resource-workflow" "scriptify"))
 
 (defvar whizzml-font-lock-keywords
   `(("(\\(define\\)\\>[ \t]*(\\(\\sw+\\)?"
