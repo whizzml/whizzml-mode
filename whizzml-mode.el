@@ -4,7 +4,7 @@
 
 ;; Author: Jose Antonio Ortega Ruiz <jao@bigml.com>
 ;; Package-Requires: ((emacs "24.4"))
-;; Version: 0.34.1
+;; Version: 0.35.0
 ;; Keywords: languages, lisp
 
 
@@ -213,6 +213,11 @@
     "dataset-choose-objective-id"
     "dataset-get-objective-id"
     "datetime-field?"
+    "execution-inputs"
+    "execution-logs"
+    "execution-output-resources"
+    "execution-outputs"
+    "execution-sources"
     "field?"
     "field-categories"
     "field-distribution"
