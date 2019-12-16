@@ -4,7 +4,7 @@
 
 ;; Author: Jose Antonio Ortega Ruiz <jao@bigml.com>
 ;; Package-Requires: ((emacs "24.4"))
-;; Version: 0.35.0
+;; Version: 0.35.1
 ;; Keywords: languages, lisp
 
 
@@ -82,7 +82,7 @@
     ;; (modify-syntax-entry ?, "'   " st)
     ;; (modify-syntax-entry ?@ "'   " st)
     (modify-syntax-entry ?# "' 14" st)
-    ;; (modify-syntax-entry ?\\ "\\   " st)
+    (modify-syntax-entry ?\\ "\\   " st)
     st))
 
 (defvar whizzml-mode-abbrev-table nil)
