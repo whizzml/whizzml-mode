@@ -1,10 +1,10 @@
 ;;; whizzml-mode.el --- Programming mode for editing WhizzML files
 
-;; Copyright (c) 2016, 2017, 2018, 2019 BigML, Inc
+;; Copyright (c) 2016, 2017, 2018, 2019, 2020 BigML, Inc
 
 ;; Author: Jose Antonio Ortega Ruiz <jao@bigml.com>
 ;; Package-Requires: ((emacs "24.4"))
-;; Version: 0.35.1
+;; Version: 0.43.0
 ;; Keywords: languages, lisp
 
 
@@ -100,7 +100,7 @@
     "bigml--cdf" "bigml--pdf" "boolean?" "butlast" "capitalize"
     "ceil" "chi-squared-test" "compare-objects"
     "concat" "cons" "contains-string?" "contains?" "cos" "cosh" "count"
-    "create" "create-rng" "created-resources" "current-time"
+    "create" "create-rng" "created-resources" "created-resources*" "current-time"
     "delete" "difference" "dissoc" "dissoc-in" "div" "drop"
     "empty?" "even?" "every?" "exp" "fetch"
     "flatline-listify" "flatline-splice" "flatline-str" "flatline-str-splice"
@@ -133,7 +133,8 @@
     "with-time-log" "wait" "zero?"))
 
 (defvar whizzml-std-procedures
-  '("create*" "create-and-wait*"
+  '("batch-resource-types"
+    "create*" "create-and-wait*"
     "create-and-wait-anomaly"
     "create-and-wait-anomalyscore"
     "create-and-wait-association"
@@ -227,8 +228,10 @@
     "find-field"
     "gamma"
     "categorical-field?"
-    "numeric-field?"
+    "image-field?"
     "items-field?"
+    "numeric-field?"
+    "path-field?"
     "json-str"
     "text-field?"
     "list-anomalies"
@@ -266,6 +269,7 @@
     "list-statisticaltests"
     "list-timeseries"
     "list-topicdistributions" "list-topicmodels"
+    "match-fields-by-name"
     "merge-datasets"
     "create" "wait" "fetch" "delete" "update" "wait*" "delete*"
     "wait-forever" "wait-forever*"
